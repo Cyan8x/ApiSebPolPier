@@ -6,5 +6,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::controller(UsuarioController::class)->group(function () {
     Route::get('listarUsuarios', 'listarUsuarios');
-    Route::post('usuario', 'usuario');
+    Route::post('insertarUsuario', 'insertarUsuario');
+    Route::post('loginUsuario', 'validateUsuario');
 });

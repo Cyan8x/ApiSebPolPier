@@ -19,10 +19,17 @@ return new class extends Migration
             $table->unsignedBigInteger('id_cate');
             $table->unsignedBigInteger('id_prov');
             $table->string('cod_origen')->unique();
-            $table->string('imagen')->unique();
-            //falta llenar con mas columnas y darle migrate
+            // CAMPO IMAGEN ->
+            $table->integer('imagenes')->unsigned()->nullable(); //No sé para que sirve, pero lo creo por si acaso
+            $table->string('url')->nullable();  //No sé para que sirve, pero lo creo por si acaso
+            // <- CAMPO IMAGEN
+            $table->string('nombre');
+            $table->integer('stock');
+            $table->float('precio'); //Precio en dolares
             $table->timestamps();
             $table->foreign('id_marc')->references('id')->on('marcas');
+            $table->foreign('id_cate')->references('id')->on('categorias');
+            $table->foreign('id_prov')->references('id')->on('proveedores');
         });
     }
 

@@ -3,7 +3,7 @@ namespace App\Http\Requests\Usuario;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class GetUsuarioRequest extends FormRequest
+class LoginUsuarioRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,8 +23,8 @@ class GetUsuarioRequest extends FormRequest
     public function rules()
     {
         return [
-            'email'=>'required|string|max:100|min:3',
-            'password'=>'required|string|max:255|min:3'
+            'email'=>'required|email',
+            'password'=>'required|string'
         ];
     }
 }
